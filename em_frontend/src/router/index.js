@@ -3,6 +3,7 @@ import HomePage from "../views/HomePage.vue";
 import AboutPage from "../views/AboutPage.vue";
 import BookmarksPage from "../views/BookmarksPage.vue";
 import EventDetailsPage from "../views/EventDetailsPage.vue";
+import NotFoundPage from "../views/NotFoundPage.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/events/:id",
     name: "EventDetailsPage",
     component: EventDetailsPage,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFoundPage",
+    component: NotFoundPage,
   },
 ];
 

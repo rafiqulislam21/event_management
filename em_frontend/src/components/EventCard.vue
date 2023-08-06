@@ -4,11 +4,15 @@
         <v-img :src="item.src" height="128" cover></v-img>
         <v-card-text>
             {{ item.description }}
-        </v-card-text>
-        <template v-slot:actions>
-            <router-link :to="'/events/'+item.title">
-            <v-btn color="primary" variant="text">View More</v-btn></router-link>
-            <v-btn color="primary" variant="text">See in Map</v-btn>
+            </v-card-text>
+            <h6 class="text-disabled"><v-icon icon="mdi-map-marker" />Vienna, Austria</h6>
+            <h6 class="text-disabled"><v-icon icon="mdi-seat-passenger" />15/200 | 20<v-icon icon="mdi-currency-eur" /></h6>
+            <v-rating v-model="rating" class="ma-2" density="compact"></v-rating>
+        
+            <template v-slot:actions>
+            <router-link :to="'/events/' + item.title">
+                <v-btn color="primary" variant="text">View More</v-btn></router-link>
+            <v-btn color="error" variant="icon"><v-icon icon="mdi-heart-outline" /></v-btn>
         </template>
     </v-card>
 </template>
@@ -21,6 +25,7 @@ export default {
         item: {}
     },
     data: () => ({
+        rating: 3.5,
         eventList: [
             {
                 title: "Cuba",
