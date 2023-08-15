@@ -12,7 +12,7 @@
             <template v-slot:actions>
             <router-link :to="'/events/' + item.title">
                 <v-btn color="primary" variant="text">View More</v-btn></router-link>
-            <v-btn color="error" variant="icon"><v-icon icon="mdi-heart-outline" /></v-btn>
+            <v-btn @click="$store.commit('increaseBookmark')" color="error" variant="icon"><v-icon icon="mdi-heart-outline" /></v-btn>
         </template>
     </v-card>
 </template>
@@ -36,5 +36,8 @@ export default {
             }
         ]
     }),
+    methods:{
+
+    }
 };
 </script>
