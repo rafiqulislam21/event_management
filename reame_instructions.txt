@@ -2,5 +2,6 @@ commands:
 
 1. node -v
 2. npm install -g @vue/cli@latest
+--. vue ui
 3. vue create projectName
 4. vue add vuetify
